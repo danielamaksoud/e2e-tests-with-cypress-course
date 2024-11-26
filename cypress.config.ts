@@ -7,7 +7,8 @@ export default defineConfig({
       // implement node event listeners here
     },
     env: {
-      demoVar: "Hello from the Cypress.Config.ts"
+      demoVar: "Hello from the Cypress.Config.ts",
+      Angular: "https://www.globalsqa.com/",
     },
     pageLoadTimeout: 60000,
     viewportHeight: 1000,
