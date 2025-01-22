@@ -12,4 +12,16 @@ describe('Iframe example', () => {
             })
         })
     })
-})
+});
+
+describe('Typing on an Iframe using the internet app', () => {
+    beforeEach(() => {
+        cy.visit(`${Cypress.env("theInternet")}/iframe`);
+    });
+    it('Iframedemo', () => {
+        cy.get('#mce_0_ifr').then(($iframe) => {
+            const $body = $iframe.contents().find('body');
+            cy.wrap($body).find('p').should('have.text', 'Your content goes here.');
+        });
+    });
+});
